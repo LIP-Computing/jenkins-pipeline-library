@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction &mdash; jenkins-pipeline-library 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to jenkins-pipeline-library’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> jenkins-pipeline-library
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-software-quality-assurance-baseline">The Software Quality Assurance baseline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-jenkins-library-pipeline">The jenkins-library-pipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#configuration-file">Configuration file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#where-should-be-stored">Where should be stored?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-sections">Main sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntax-of-the-yaml-configuration-file">Syntax of the YAML configuration file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#validation">Validation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">jenkins-pipeline-library</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/user/tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<span id="tutorial"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-software-quality-assurance-baseline">
+<h2>The Software Quality Assurance baseline<a class="headerlink" href="#the-software-quality-assurance-baseline" title="Permalink to this headline">¶</a></h2>
+<p>The SQA criteria collects a comprehensive set of good practices meant to
+improve the quality of the resultant software. The criteria is governed by the
+DevOps culture and covers the whole software development life cycle, from the
+code analysis and testing to its final delivery, with a particular focus on
+research software. The latest version of the SQA criteria can be found in
+<a class="reference external" href="https://indigo-dc.github.io/sqa-baseline">https://indigo-dc.github.io/sqa-baseline</a>.</p>
+</div>
+<div class="section" id="the-jenkins-library-pipeline">
+<h2>The jenkins-library-pipeline<a class="headerlink" href="#the-jenkins-library-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>The jenkins-pipeline-library implements the aforementioned requirements from
+the SQA baseline in order to simplify the task of developing quality software
+in research. To this end, the library relies on the Jenkins’ Pipeline-as-Code
+capabilities to dinamically compose customized workflows –aka pipelines or
+<code class="docutils literal notranslate"><span class="pre">Jenkinsfile</span></code>– that are executed for every change in the source code.</p>
+<p>Consequently, the jenkins-pipeline-library hides the complexity of the
+domain-specific language (DSL) syntax used in the Jenkisfiles, providing the
+users with the possibility of describing the relevant information –needed to
+analyze, build, deploy, test and deliver the application– through a YAML-based
+file.</p>
+</div>
+</div>
+<div class="section" id="configuration-file">
+<h1>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="where-should-be-stored">
+<h2>Where should be stored?<a class="headerlink" href="#where-should-be-stored" title="Permalink to this headline">¶</a></h2>
+<p>The jenkins-pipeline-library expects the YAML config file to be placed in a
+particular location within the application’s code repository:
+<code class="docutils literal notranslate"><span class="pre">.sqa/config.yml</span></code>. Other important configuration will be placed as well in
+the <code class="docutils literal notranslate"><span class="pre">.sqa</span></code> folder as we will see in the following sections.</p>
+</div>
+<div class="section" id="main-sections">
+<h2>Main sections<a class="headerlink" href="#main-sections" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>The YAML configuration file has three primary sections:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config</span></code>, used for defining the generic parameters, such as the workspace
+and execution agents.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code>, where the criteria to be checked is defined. Each
+requirement has a unique identifier and a set of mandatory and optional
+attributes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">environment</span></code> contains the environment variables required to execute the
+SQA criteria.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="syntax-of-the-yaml-configuration-file">
+<h2>Syntax of the YAML configuration file<a class="headerlink" href="#syntax-of-the-yaml-configuration-file" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="validation">
+<h1>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to jenkins-pipeline-library’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Pablo Orviz Fernández
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: release/2.0.0-docs
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../release_2.0.0-docs/user/tutorial.html">release/2.0.0-docs</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
