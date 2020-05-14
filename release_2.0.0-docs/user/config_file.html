@@ -13,6 +13,10 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
 
   
@@ -31,6 +35,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
+        <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script src="../_static/sphinx_tabs/tabs.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -455,6 +461,101 @@ defined in the docker-compose.yml.</p>
 </dd>
 <dt class="field-even">Default</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">tox.ini</span></code></p>
+</dd>
+</dl>
+<dl>
+<dt>Example:</dt><dd><div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+<p>qc-style</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+<p>qc-coverage</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-2 docutils container">
+<div class="docutils container">
+<p>qc-functional</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-3 docutils container">
+<div class="docutils container">
+<p>qc-security</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-4 docutils container">
+<div class="docutils container">
+<p>qc-doc</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
+  <span class="nt">qc-style</span><span class="p">:</span>
+    <span class="nt">repos</span><span class="p">:</span>
+      <span class="nt">worsica-processing</span><span class="p">:</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
+        <span class="nt">tox</span><span class="p">:</span>
+          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stylecheck</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
+<span class="nt">qc-functional</span><span class="p">:</span>
+  <span class="nt">repos</span><span class="p">:</span>
+    <span class="nt">worsica-processing</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
+      <span class="nt">tox</span><span class="p">:</span>
+        <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">coverage</span>
+    <span class="nt">worsica-portal</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">celery</span>
+      <span class="nt">tox</span><span class="p">:</span>
+        <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">functional</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-2 docutils container">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
+  <span class="nt">qc-functional</span><span class="p">:</span>
+    <span class="nt">repos</span><span class="p">:</span>
+      <span class="nt">worsica-processing</span><span class="p">:</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
+        <span class="nt">tox</span><span class="p">:</span>
+          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">unittest</span>
+      <span class="nt">worsica-portal</span><span class="p">:</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">celery</span>
+        <span class="nt">tox</span><span class="p">:</span>
+          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">functional</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-3 docutils container">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
+  <span class="nt">qc-security</span><span class="p">:</span>
+    <span class="nt">repos</span><span class="p">:</span>
+      <span class="nt">worsica-processing</span><span class="p">:</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
+        <span class="nt">tox</span><span class="p">:</span>
+          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">security</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-4 docutils container">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
+  <span class="nt">qc-doc</span><span class="p">:</span>
+    <span class="nt">repos</span><span class="p">:</span>
+      <span class="nt">worsica-cicd</span><span class="p">:</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
+        <span class="nt">commands</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python setup.py build_sphinx</span>
+</pre></div>
+</div>
+</div>
+</div>
 </dd>
 </dl>
 </div>
