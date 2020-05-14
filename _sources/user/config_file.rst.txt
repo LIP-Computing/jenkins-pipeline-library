@@ -196,7 +196,7 @@ The current set of criteria supported from the SQA baseline (check *Options*
 above) share the same available settings. They all fall into a code repository
 categorization, through the use of the ``repos`` map setting.
 
-:: note:
+.. note:
    The repositories used under ``repos`` must be previously defined in the 
    ``config:project_repos`` setting. They are referred by the identifiers
    used there.
