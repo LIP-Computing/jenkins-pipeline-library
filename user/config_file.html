@@ -96,7 +96,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#project-repos">project_repos</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#sqa-criteria">sqa_criteria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sqa-criteria">sqa_criteria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#container">container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tox">tox</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#environment">environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#timeout">timeout</a></li>
 </ul>
@@ -349,7 +353,7 @@ optional attributes.</p>
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">map</span></code></p>
 </dd>
-<dt class="field-even">Options</dt>
+<dt class="field-even">Parameters</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">qc-style</span></code>, <code class="docutils literal notranslate"><span class="pre">qc-functional</span></code>, <code class="docutils literal notranslate"><span class="pre">qc-coverage</span></code>, <code class="docutils literal notranslate"><span class="pre">qc-security</span></code>, <code class="docutils literal notranslate"><span class="pre">qc-doc</span></code></p>
 </dd>
 <dt class="field-odd">Required</dt>
@@ -371,6 +375,94 @@ optional attributes.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code> setting is the most relevant section of the
 <code class="docutils literal notranslate"><span class="pre">.sqa/config.yml</span></code> as it defines the different stages that will be
 dynamically added to the pipeline.</p>
+</div>
+<p>The relationship between the identifiers used in the definition of the
+<code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code> (see <em>Options</em> above) and the ones used in the SQA criteria
+is summarized as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>sqa_criteria ID</p></th>
+<th class="head"><p>SQA baseline category</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>qc-style</p></td>
+<td><p>QC.Sty</p></td>
+</tr>
+<tr class="row-odd"><td><p>qc-coverage</p></td>
+<td><p>QC.Uni</p></td>
+</tr>
+<tr class="row-even"><td><p>qc-functional</p></td>
+<td><p>QC.Fun</p></td>
+</tr>
+<tr class="row-odd"><td><p>qc-security</p></td>
+<td><p>QC.Sec</p></td>
+</tr>
+<tr class="row-even"><td><p>qc-doc</p></td>
+<td><p>QC.Doc</p></td>
+</tr>
+</tbody>
+</table>
+<p>The current set of criteria supported from the SQA baseline (check <em>Options</em>
+above) share the same available settings. They all fall into a code repository
+categorization, through the use of the <code class="docutils literal notranslate"><span class="pre">repos</span></code> map setting.</p>
+<dl class="simple">
+<dt>:: note:</dt><dd><p>The repositories used under <code class="docutils literal notranslate"><span class="pre">repos</span></code> must be previously defined in the
+<code class="docutils literal notranslate"><span class="pre">config:project_repos</span></code> setting. They are referred by the identifiers
+used there.</p>
+</dd>
+</dl>
+<p>Next, we will describe the available settings that can be defined for each
+repository associated with a given criteria:</p>
+<div class="section" id="container">
+<h4>container<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h4>
+<p>Allows to specify the Docker container where the given criteria assessment will
+take place. It using docker-compose, the value could be any of the services
+defined in the docker-compose.yml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</dd>
+<dt class="field-even">Required</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="tox">
+<h4>tox<a class="headerlink" href="#tox" title="Permalink to this headline">¶</a></h4>
+<p>Built-in support tox application. It is only applicable for Python environments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">map</span></code></p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">testenv</span></code>, <code class="docutils literal notranslate"><span class="pre">tox_file</span></code></p>
+</dd>
+</dl>
+<p><strong>testenv</strong></p>
+<p>Identifier of the test environment that tox shall use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</dd>
+<dt class="field-even">Required</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+</dl>
+<p><strong>tox_file</strong></p>
+<p>Specifies the path to the tox configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">tox.ini</span></code></p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="environment">
