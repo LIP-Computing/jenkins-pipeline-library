@@ -1,15 +1,19 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to jenkins-pipeline-library’s documentation! &mdash; jenkins-pipeline-library 2.0.0 documentation</title>
+  <title>jenkins-pipeline-library: automate the SQA task &mdash; jenkins-pipeline-library 2.0.0 documentation</title>
   
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/banner.css" type="text/css" />
 
   
   
@@ -17,7 +21,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,14 +35,9 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/banner.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction" href="user/tutorial.html" /> 
+    <link rel="next" title="Configuration File" href="user/config_file.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,7 +51,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> jenkins-pipeline-library
+            <a href="#" class="icon icon-home" alt="Documentation Home"> jenkins-pipeline-library
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,16 +86,15 @@
               
             
             
-              <p class="caption"><span class="caption-text">Tutorial</span></p>
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user/tutorial.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user/tutorial.html#configuration-file">Configuration file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user/tutorial.html#validation">Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/config_file.html">Configuration File</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -132,9 +133,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Welcome to jenkins-pipeline-library’s documentation!</li>
+      <li>jenkins-pipeline-library: automate the SQA task</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -153,21 +154,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-jenkins-pipeline-library-s-documentation">
-<h1>Welcome to jenkins-pipeline-library’s documentation!<a class="headerlink" href="#welcome-to-jenkins-pipeline-library-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>The jenkins-pipeline-library provides an easy means to compose Jenkins
-code pipelines (aka Jenkinsfiles) that put into practice the principles
-defined in the <a class="reference external" href="https://github.com/indigo-dc/sqa-baseline">Software Quality Assurance (SQA) baseline</a>, to conduct the software
-development life cycle.</p>
+  <div class="section" id="jenkins-pipeline-library-automate-the-sqa-task">
+<h1>jenkins-pipeline-library: automate the SQA task<a class="headerlink" href="#jenkins-pipeline-library-automate-the-sqa-task" title="Permalink to this headline">¶</a></h1>
+<p>The jenkins-pipeline-library provides an easy means to add to your Jenkins
+code pipelines (aka <code class="docutils literal notranslate"><span class="pre">Jenkinsfiles</span></code>) additional stages that implement the
+criteria defined in the <a class="reference external" href="https://github.com/indigo-dc/sqa-baseline">Software Quality Assurance (SQA) baseline</a>.</p>
+<dl class="simple">
+<dt>Simplified and customized composition</dt><dd><p>The SQA criteria is defined in a YAML configuration file, using specific
+parameters to provide the required data, thus avoiding the need of
+learning the domain-specific language (DSL) syntax used to compose the
+Jenkinsfiles.</p>
+</dd>
+<dt>Dynamic creation of the pipelines</dt><dd><p>Each SQA requirement defined in the configuration file is dinamically
+loaded as a new stage in the resultant pipeline. This process does not
+affect the additional static stages already defined in the pipeline.</p>
+</dd>
+</dl>
+<div class="section" id="what-is-the-sqa-baseline">
+<h2>What is the SQA baseline?<a class="headerlink" href="#what-is-the-sqa-baseline" title="Permalink to this headline">¶</a></h2>
+<p>The SQA criteria collects a comprehensive set of good practices meant to
+improve the quality of the resultant software. The criteria is governed by the
+DevOps culture and covers the whole software development life cycle, from the
+code analysis and testing to its final delivery, with a particular focus on
+research software. The latest version of the SQA criteria can be found in
+<a class="reference external" href="https://indigo-dc.github.io/sqa-baseline">https://indigo-dc.github.io/sqa-baseline</a>.</p>
 <div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Tutorial</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="user/tutorial.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user/tutorial.html#configuration-file">Configuration file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user/tutorial.html#validation">Validation</a></li>
-</ul>
 </div>
 </div>
 
@@ -179,7 +191,7 @@ development life cycle.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="user/tutorial.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="user/config_file.html" class="btn btn-neutral float-right" title="Configuration File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
@@ -189,11 +201,19 @@ development life cycle.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Pablo Orviz Fernández
+        
+        &copy; Copyright 2020, EOSC-Synergy project
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
