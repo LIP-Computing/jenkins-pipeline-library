@@ -236,7 +236,7 @@ Specifies the path to the tox configuration file.
 :Type: ``path``
 :Default: ``tox.ini``
 
-Example:
+*Examples:*
     .. tabs::
 
         .. tab:: qc-style
