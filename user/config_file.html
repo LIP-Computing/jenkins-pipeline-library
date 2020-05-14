@@ -90,7 +90,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration File</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#supported-settings">Supported settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#config">config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config">config</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#node-agent">node_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploy-template">deploy_template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project-repos">project_repos</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#sqa-criteria">sqa_criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#environment">environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#timeout">timeout</a></li>
@@ -223,7 +228,7 @@ agents.</p>
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">map</span></code></p>
 </dd>
-<dt class="field-even">Options</dt>
+<dt class="field-even">Parameters</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">node_agent</span></code>, <code class="docutils literal notranslate"><span class="pre">deploy_template</span></code>, <code class="docutils literal notranslate"><span class="pre">project_repos</span></code></p>
 </dd>
 <dt class="field-odd">Required</dt>
@@ -241,6 +246,98 @@ agents.</p>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
       <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
 </pre></div>
+</div>
+<div class="section" id="node-agent">
+<h4>node_agent<a class="headerlink" href="#node-agent" title="Permalink to this headline">¶</a></h4>
+<p>The type of agent to drive the execution of the dynamic stages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</dd>
+<dt class="field-even">Options</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">docker-compose</span></code></p>
+</dd>
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">docker-compose</span></code></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="deploy-template">
+<h4>deploy_template<a class="headerlink" href="#deploy-template" title="Permalink to this headline">¶</a></h4>
+<p>Path to the template containing the agent definition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p>
+</dd>
+<dt class="field-even">Required</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="project-repos">
+<h4>project_repos<a class="headerlink" href="#project-repos" title="Permalink to this headline">¶</a></h4>
+<p>Describes the code repositories that the pipeline will deal with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">map</span></code></p>
+</dd>
+<dt class="field-even">Required</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">config</span><span class="p">:</span>
+  <span class="nt">project_repos</span><span class="p">:</span>
+    <span class="nt">worsica-processing</span><span class="p">:</span>
+      <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
+      <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+      <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
+</pre></div>
+</div>
+<p>The set of allowed parameters for the definition of the code repository’s
+description within the <code class="docutils literal notranslate"><span class="pre">project_repos</span></code> setting are herein described:</p>
+<p><strong>repo</strong></p>
+<p>URL pointing to the root path of the code repository.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">url</span></code></p>
+</dd>
+<dt class="field-even">Required</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+</dl>
+<p><strong>branch</strong></p>
+<p>Branch name to be checked out.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">master</span></code></p>
+</dd>
+</dl>
+<p><strong>dockerhub</strong></p>
+<p>Repository name within the Docker Hub registry where the Docker images
+produced by the pipeline will be pushed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</dd>
+<dt class="field-even">Required</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+</dl>
+<p><strong>dockertag</strong></p>
+<p>Tag name to be used for labeling the resultant Docker image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">latest</span></code></p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="sqa-criteria">
