@@ -254,8 +254,6 @@ agents.</p>
 </dl>
 <p>Example:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">config</span><span class="p">:</span>
-  <span class="nt">node_agent</span><span class="p">:</span> <span class="s">&#39;docker-compose&#39;</span>
-  <span class="nt">deploy_template</span><span class="p">:</span> <span class="s">&#39;.sqa/docker-compose.yml&#39;</span>
   <span class="nt">project_repos</span><span class="p">:</span>
     <span class="nt">worsica-processing</span><span class="p">:</span>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
@@ -266,7 +264,8 @@ agents.</p>
 </div>
 <div class="section" id="node-agent">
 <h4>node_agent<a class="headerlink" href="#node-agent" title="Permalink to this headline">¶</a></h4>
-<p>The type of agent to drive the execution of the dynamic stages.</p>
+<p>The type of agent to drive the execution of the dynamic stages. Docker Compose
+is used by default.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
@@ -281,13 +280,14 @@ agents.</p>
 </div>
 <div class="section" id="deploy-template">
 <h4>deploy_template<a class="headerlink" href="#deploy-template" title="Permalink to this headline">¶</a></h4>
-<p>Path to the template containing the agent definition.</p>
+<p>Path to the template containing the definition of the services for the
+<code class="docutils literal notranslate"><span class="pre">node_agent</span></code> in use.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p>
 </dd>
-<dt class="field-even">Required</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">.sqa/docker-compose.yml</span></code></p>
 </dd>
 </dl>
 </div>
