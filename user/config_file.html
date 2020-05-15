@@ -197,8 +197,6 @@ root directory of your code repository.</p>
 
 <span class="c1"># generic configuration: workspace, agents</span>
 <span class="nt">config</span><span class="p">:</span>
-  <span class="nt">node_agent</span><span class="p">:</span> <span class="s">&#39;docker-compose&#39;</span>
-  <span class="nt">deploy_template</span><span class="p">:</span> <span class="s">&#39;.sqa/docker-compose.yml&#39;</span>
   <span class="nt">project_repos</span><span class="p">:</span>
     <span class="nt">worsica-processing</span><span class="p">:</span>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
@@ -276,6 +274,11 @@ is used by default.</p>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">config:node_agent</span></code></p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">config</span><span class="p">:</span>
+  <span class="nt">node_agent</span><span class="p">:</span> <span class="s">&#39;docker-compose&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="deploy-template">
 <span id="config-deploy-template-setting"></span><h4>deploy_template<a class="headerlink" href="#deploy-template" title="Permalink to this headline">¶</a></h4>
@@ -292,6 +295,11 @@ is used by default.</p>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">config:deploy_template</span></code></p>
 </dd>
 </dl>
+<p>Example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">config</span><span class="p">:</span>
+  <span class="nt">deploy_template</span><span class="p">:</span> <span class="s">&#39;.sqa/docker-compose.yml&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="project-repos">
 <h4>project_repos<a class="headerlink" href="#project-repos" title="Permalink to this headline">¶</a></h4>
