@@ -276,6 +276,9 @@ is used by default.</p>
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">docker-compose</span></code></p>
 </dd>
+<dt class="field-even">Location</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">config:node_agent</span></code></p>
+</dd>
 </dl>
 </div>
 <div class="section" id="deploy-template">
@@ -289,6 +292,9 @@ is used by default.</p>
 <dt class="field-even">Default</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">.sqa/docker-compose.yml</span></code></p>
 </dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">config:deploy_template</span></code></p>
+</dd>
 </dl>
 </div>
 <div class="section" id="project-repos">
@@ -300,6 +306,9 @@ is used by default.</p>
 </dd>
 <dt class="field-even">Required</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">config:project_repos</span></code></p>
 </dd>
 </dl>
 <p>Example:</p>
@@ -323,6 +332,9 @@ description within the <code class="docutils literal notranslate"><span class="p
 <dt class="field-even">Required</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
 </dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">config:project_repos:repo</span></code></p>
+</dd>
 </dl>
 <p><strong>branch</strong></p>
 <p>Branch name to be checked out.</p>
@@ -332,6 +344,9 @@ description within the <code class="docutils literal notranslate"><span class="p
 </dd>
 <dt class="field-even">Default</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">master</span></code></p>
+</dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">config:project_repos:branch</span></code></p>
 </dd>
 </dl>
 <p><strong>dockerhub</strong></p>
@@ -344,6 +359,9 @@ produced by the pipeline will be pushed.</p>
 <dt class="field-even">Required</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
 </dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">config:project_repos:dockerhub</span></code></p>
+</dd>
 </dl>
 <p><strong>dockertag</strong></p>
 <p>Tag name to be used for labeling the resultant Docker image.</p>
@@ -353,6 +371,9 @@ produced by the pipeline will be pushed.</p>
 </dd>
 <dt class="field-even">Default</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">latest</span></code></p>
+</dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">config:project_repos:dockertag</span></code></p>
 </dd>
 </dl>
 </div>
@@ -437,6 +458,9 @@ defined in the docker-compose.yml.</p>
 <dt class="field-even">Required</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
 </dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:container</span></code></p>
+</dd>
 </dl>
 </div>
 <div class="section" id="tox">
@@ -449,6 +473,9 @@ defined in the docker-compose.yml.</p>
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">testenv</span></code>, <code class="docutils literal notranslate"><span class="pre">tox_file</span></code></p>
 </dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox</span></code></p>
+</dd>
 </dl>
 <p><strong>testenv</strong></p>
 <p>Identifier of the test environment that tox shall use.</p>
@@ -459,6 +486,9 @@ defined in the docker-compose.yml.</p>
 <dt class="field-even">Required</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
 </dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox:testenv</span></code></p>
+</dd>
 </dl>
 <p><strong>tox_file</strong></p>
 <p>Specifies the path to the tox configuration file.</p>
@@ -468,6 +498,9 @@ defined in the docker-compose.yml.</p>
 </dd>
 <dt class="field-even">Default</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">tox.ini</span></code></p>
+</dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox:tox_file</span></code></p>
 </dd>
 </dl>
 <dl>
