@@ -282,7 +282,7 @@ is used by default.</p>
 </dl>
 </div>
 <div class="section" id="deploy-template">
-<h4>deploy_template<a class="headerlink" href="#deploy-template" title="Permalink to this headline">¶</a></h4>
+<span id="config-deploy-template-setting"></span><h4>deploy_template<a class="headerlink" href="#deploy-template" title="Permalink to this headline">¶</a></h4>
 <p>Path to the template containing the definition of the services for the
 <code class="docutils literal notranslate"><span class="pre">node_agent</span></code> in use.</p>
 <dl class="field-list simple">
@@ -545,16 +545,16 @@ defined in the docker-compose.yml.</p>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
-<span class="nt">qc-functional</span><span class="p">:</span>
-  <span class="nt">repos</span><span class="p">:</span>
-    <span class="nt">worsica-processing</span><span class="p">:</span>
-      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
-      <span class="nt">tox</span><span class="p">:</span>
-        <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">coverage</span>
-    <span class="nt">worsica-portal</span><span class="p">:</span>
-      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">celery</span>
-      <span class="nt">tox</span><span class="p">:</span>
-        <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">functional</span>
+  <span class="nt">qc-coverage</span><span class="p">:</span>
+    <span class="nt">repos</span><span class="p">:</span>
+      <span class="nt">worsica-processing</span><span class="p">:</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
+        <span class="nt">tox</span><span class="p">:</span>
+          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">coverage</span>
+      <span class="nt">worsica-portal</span><span class="p">:</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">celery</span>
+        <span class="nt">tox</span><span class="p">:</span>
+          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">coverage</span>
 </pre></div>
 </div>
 </div>
