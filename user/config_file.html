@@ -203,7 +203,7 @@ root directory of your code repository.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rc1</span>
 
 <span class="nt">sqa-criteria</span><span class="p">:</span>
   <span class="nt">qc-style</span><span class="p">:</span>
@@ -254,7 +254,7 @@ agents.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rc1</span>
 </pre></div>
 </div>
 <div class="section" id="node-agent">
@@ -323,7 +323,7 @@ is used by default.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rc1</span>
 </pre></div>
 </div>
 <p>The set of allowed parameters for the definition of the code repository’s
@@ -342,7 +342,10 @@ description within the <code class="docutils literal notranslate"><span class="p
 </dd>
 </dl>
 <p><strong>branch</strong></p>
-<p>Branch name to be checked out.</p>
+<p>Branch name to be checked out. Additionally, the provided value can contain any
+of the possible forms that are allowed by the
+<a class="reference external" href="jenkins.io/doc/pipeline/steps/workflow-scm-step/plugin">Pipeline: SCM Step</a>
+plugin .</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
@@ -366,10 +369,11 @@ produced by the pipeline will be pushed.</p>
 </dd>
 </dl>
 <p><strong>dockertag</strong></p>
-<p>Tag name to be used for labeling the resultant Docker image.</p>
+<p>Tag name to be used for labeling the resultant Docker image. A list can be
+provided when in the need of pushing multiple tags.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code></p>
 </dd>
 <dt class="field-even">Default</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">latest</span></code></p>
