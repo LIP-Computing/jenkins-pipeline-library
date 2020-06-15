@@ -107,7 +107,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#project-repos">project_repos</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#sqa-criteria">sqa-criteria</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sqa-criteria">sqa_criteria</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#container">container</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tox">tox</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#commands">commands</a></li>
@@ -203,7 +203,7 @@ root directory of your code repository.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rc1</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
 
 <span class="nt">sqa-criteria</span><span class="p">:</span>
   <span class="nt">qc-style</span><span class="p">:</span>
@@ -211,7 +211,8 @@ root directory of your code repository.</p>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
         <span class="nt">tox</span><span class="p">:</span>
-          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stylecheck</span>
+          <span class="nt">testenv</span><span class="p">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stylecheck</span>
 
 <span class="nt">environment</span><span class="p">:</span>
   <span class="nt">GIT_COMMITTER_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Person1</span>
@@ -227,7 +228,7 @@ root directory of your code repository.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#config" id="id1">config</a></p></li>
-<li><p><a class="reference internal" href="#sqa-criteria" id="id2">sqa-criteria</a></p></li>
+<li><p><a class="reference internal" href="#sqa-criteria" id="id2">sqa_criteria</a></p></li>
 <li><p><a class="reference internal" href="#environment" id="id3">environment</a></p></li>
 <li><p><a class="reference internal" href="#timeout" id="id4">timeout</a></p></li>
 </ul>
@@ -254,7 +255,7 @@ agents.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rc1</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
 </pre></div>
 </div>
 <div class="section" id="node-agent">
@@ -323,7 +324,7 @@ is used by default.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rc1</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
 </pre></div>
 </div>
 <p>The set of allowed parameters for the definition of the code repository’s
@@ -342,10 +343,7 @@ description within the <code class="docutils literal notranslate"><span class="p
 </dd>
 </dl>
 <p><strong>branch</strong></p>
-<p>Branch name to be checked out. Additionally, the provided value can contain any
-of the possible forms that are allowed by the
-<a class="reference external" href="jenkins.io/doc/pipeline/steps/workflow-scm-step/plugin">Pipeline: SCM Step</a>
-plugin .</p>
+<p>Branch name to be checked out.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
@@ -364,16 +362,18 @@ produced by the pipeline will be pushed.</p>
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </dd>
-<dt class="field-even">Location</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">config:project_repos:dockerhub</span></code></p>
+<dt class="field-even">Required</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+</dd>
+<dt class="field-odd">Location</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">config:project_repos:dockerhub</span></code></p>
 </dd>
 </dl>
 <p><strong>dockertag</strong></p>
-<p>Tag name to be used for labeling the resultant Docker image. A list can be
-provided when in the need of pushing multiple tags.</p>
+<p>Tag name to be used for labeling the resultant Docker image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </dd>
 <dt class="field-even">Default</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">latest</span></code></p>
@@ -385,7 +385,7 @@ provided when in the need of pushing multiple tags.</p>
 </div>
 </div>
 <div class="section" id="sqa-criteria">
-<h3><a class="toc-backref" href="#id2">sqa-criteria</a><a class="headerlink" href="#sqa-criteria" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id2">sqa_criteria</a><a class="headerlink" href="#sqa-criteria" title="Permalink to this headline">¶</a></h3>
 <p>This setting allows to define the criteria from the SQA baseline to be checked.
 Each requirement has a unique identifier and an associated set of mandatory and
 optional attributes.</p>
@@ -407,17 +407,18 @@ optional attributes.</p>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
         <span class="nt">tox</span><span class="p">:</span>
-          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stylecheck</span>
+          <span class="nt">testenv</span><span class="p">:</span>
+             <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stylecheck</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">sqa-criteria</span></code> setting is the most relevant section of the
+<p>The <code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code> setting is the most relevant section of the
 <code class="docutils literal notranslate"><span class="pre">.sqa/config.yml</span></code> as it defines the different stages that will be
 dynamically added to the pipeline.</p>
 </div>
 <p>The relationship between the identifiers used in the definition of the
-<code class="docutils literal notranslate"><span class="pre">sqa-criteria</span></code> (see <em>Options</em> above) and the ones used in the SQA criteria
+<code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code> (see <em>Options</em> above) and the ones used in the SQA criteria
 is summarized as follows:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -425,7 +426,7 @@ is summarized as follows:</p>
 <col style="width: 58%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>sqa-criteria ID</p></th>
+<tr class="row-odd"><th class="head"><p>sqa_criteria ID</p></th>
 <th class="head"><p>SQA baseline category</p></th>
 </tr>
 </thead>
@@ -482,59 +483,65 @@ as showed in the following examples.</p>
 </div>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa-criteria</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
   <span class="nt">qc-style</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
         <span class="nt">tox</span><span class="p">:</span>
-          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stylecheck</span>
+          <span class="nt">testenv</span><span class="p">:</span>
+              <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stylecheck</span>
 </pre></div>
 </div>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa-criteria</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
   <span class="nt">qc-coverage</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
         <span class="nt">tox</span><span class="p">:</span>
-          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">coverage</span>
+          <span class="nt">testenv</span><span class="p">:</span>
+              <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">coverage</span>
       <span class="nt">worsica-portal</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">celery</span>
         <span class="nt">tox</span><span class="p">:</span>
-          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">coverage</span>
+          <span class="nt">testenv</span><span class="p">:</span>
+              <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">coverage</span>
 </pre></div>
 </div>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-2 docutils container">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa-criteria</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
   <span class="nt">qc-functional</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
         <span class="nt">tox</span><span class="p">:</span>
-          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">unittest</span>
+          <span class="nt">testenv</span><span class="p">:</span>
+              <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">unittest</span>
       <span class="nt">worsica-portal</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">celery</span>
         <span class="nt">tox</span><span class="p">:</span>
-          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">functional</span>
+          <span class="nt">testenv</span><span class="p">:</span>
+              <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">functional</span>
 </pre></div>
 </div>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-3 docutils container">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa-criteria</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
   <span class="nt">qc-security</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
         <span class="nt">tox</span><span class="p">:</span>
-          <span class="nt">testenv</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">security</span>
+          <span class="nt">testenv</span><span class="p">:</span>
+              <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">security</span>
 </pre></div>
 </div>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-4 docutils container">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa-criteria</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
   <span class="nt">qc-doc</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-cicd</span><span class="p">:</span>
@@ -560,7 +567,7 @@ defined in the docker-compose.yml.</p>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </dd>
 <dt class="field-even">Location</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">sqa-criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:container</span></code></p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:container</span></code></p>
 </dd>
 </dl>
 </div>
@@ -576,20 +583,20 @@ environments.</p>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">testenv</span></code>, <code class="docutils literal notranslate"><span class="pre">tox_file</span></code></p>
 </dd>
 <dt class="field-odd">Location</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa-criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox</span></code></p>
 </dd>
 </dl>
 <p><strong>testenv</strong></p>
 <p>Identifier of the test environment that tox shall use.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p>
 </dd>
 <dt class="field-even">Required</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
 </dd>
 <dt class="field-odd">Location</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa-criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox:testenv</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox:testenv</span></code></p>
 </dd>
 </dl>
 <p><strong>tox_file</strong></p>
@@ -602,7 +609,7 @@ environments.</p>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">tox.ini</span></code></p>
 </dd>
 <dt class="field-odd">Location</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa-criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox:tox_file</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox:tox_file</span></code></p>
 </dd>
 </dl>
 </div>
@@ -618,11 +625,11 @@ built-in support for the tool you use for building purposes.</p>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p>
 </dd>
 <dt class="field-odd">Location</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa-criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:commands</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:commands</span></code></p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa-criteria</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
   <span class="nt">qc-sec</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
      <span class="nt">worsica-processing</span><span class="p">:</span>
