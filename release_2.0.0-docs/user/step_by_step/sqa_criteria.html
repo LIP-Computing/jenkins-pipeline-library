@@ -300,7 +300,7 @@ i.e. Python (with and without Tox) and Java (with commands).</p>
 <p>As it can be seen, the three files are linked together. In order to compose
 them, the following requirements must be considered:</p>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> (DC)</dt><dd><ol class="arabic simple">
+<dt>Notes on <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> (DC)</dt><dd><ol class="arabic simple">
 <li><p>Minimum <code class="docutils literal notranslate"><span class="pre">version:</span> <span class="pre">3.6</span></code> [DC] is required, otherwise bind
 volume definitions are not correctly supported.</p></li>
 <li><p>There are 3 main parameters that must be defined in DC file, i.e.:</p>
@@ -329,7 +329,7 @@ required and only the values for</strong> <code class="docutils literal notransl
 </li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">config.yml</span></code> (CONFIG) and <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> (DC)</dt><dd><ol class="arabic simple">
+<dt>Notes on links between <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> (CONFIG) and <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> (DC)</dt><dd><ol class="arabic simple">
 <li><p>The value for the <code class="docutils literal notranslate"><span class="pre">container</span></code> setting [CONFIG] must correspond to a
 service definition in the DC file. In the example above, the service
 <em>myrepo-testing</em> is defined under <em>services</em> inside DC file.</p></li>
@@ -342,7 +342,7 @@ must always be prefixed by</strong> <code class="docutils literal notranslate"><
 <em>./myrepo</em>.</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> (TOX), <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> (CONFIG) and <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> (DC)</dt><dd><ol class="arabic simple">
+<dt>Notes on links between <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> (TOX), <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> (CONFIG) and <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> (DC)</dt><dd><ol class="arabic simple">
 <li><p>The value for <code class="docutils literal notranslate"><span class="pre">tox_file</span></code> [CONFIG] must be the absolute path to the
 TOX file. <strong>To obtain the full path to the TOX file,</strong> <code class="docutils literal notranslate"><span class="pre">target</span></code>
 <strong>[DC file] must be prepended</strong>, as it is the folder where the
