@@ -1,7 +1,7 @@
 A minimal configuration
 =======================
 We will use the fictional repository *https://github.com/myorg/myrepo*. The
-required steps to set up the layout would imply the following steps:
+following steps set up the minimum layout:
 
 1. Clone the repo
 
@@ -10,9 +10,11 @@ required steps to set up the layout would imply the following steps:
    $ export MY_REPO=https://github.com/myorg/myrepo
    $ git clone $MY_REPO
 
-2. A good practice is to add the changes herein described in an individual
-   branch, so not directly in the production --usually ``master``-- branch. In
-   this example we will use ``setup_jenkins-pipeline-library`` as follows:
+2. A `good practice
+   <https://indigo-dc.github.io/sqa-baseline/#code-workflow-qc.wor>`_ is to add
+   the changes herein described in an individual branch, so not directly in the
+   production --usually ``master``-- branch. In this example we will use
+   ``setup_jenkins-pipeline-library`` as follows:
 
 .. code:: bash
 
@@ -20,11 +22,18 @@ required steps to set up the layout would imply the following steps:
    $ git checkout -b setup_jenkins-pipeline-library
 
 
-3. We will now create the directory structure required by the
-   jenkins-pipeline-library, *as introduced in section*
-   :ref:`Layout`.
+3. We will now create the following directory structure within the code
+   repository, as required by the library (be sure to read :ref:`Layout`
+   section):
 
-   3.1. Main folder:
+   ::
+
+       |-- .sqa
+       |    |-- config.yml
+       |    |-- docker-compose.yml
+       |-- Jenkinsfile
+
+   3.1. Create the main ``.sqa`` folder:
 
    .. code:: bash
 

@@ -171,7 +171,7 @@
   <div class="section" id="a-minimal-configuration">
 <h1>A minimal configuration<a class="headerlink" href="#a-minimal-configuration" title="Permalink to this headline">¶</a></h1>
 <p>We will use the fictional repository <em>https://github.com/myorg/myrepo</em>. The
-required steps to set up the layout would imply the following steps:</p>
+following steps set up the minimum layout:</p>
 <ol class="arabic simple">
 <li><p>Clone the repo</p></li>
 </ol>
@@ -180,19 +180,26 @@ $ git clone <span class="nv">$MY_REPO</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>A good practice is to add the changes herein described in an individual
-branch, so not directly in the production –usually <code class="docutils literal notranslate"><span class="pre">master</span></code>– branch. In
-this example we will use <code class="docutils literal notranslate"><span class="pre">setup_jenkins-pipeline-library</span></code> as follows:</p></li>
+<li><p>A <a class="reference external" href="https://indigo-dc.github.io/sqa-baseline/#code-workflow-qc.wor">good practice</a> is to add
+the changes herein described in an individual branch, so not directly in the
+production –usually <code class="docutils literal notranslate"><span class="pre">master</span></code>– branch. In this example we will use
+<code class="docutils literal notranslate"><span class="pre">setup_jenkins-pipeline-library</span></code> as follows:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="nv">$MY_REPO</span>
 $ git checkout -b setup_jenkins-pipeline-library
 </pre></div>
 </div>
 <ol class="arabic" start="3">
-<li><p>We will now create the directory structure required by the
-jenkins-pipeline-library, <em>as introduced in section</em>
-<a class="reference internal" href="../layout.html#layout"><span class="std std-ref">Layout</span></a>.</p>
-<p>3.1. Main folder:</p>
+<li><p>We will now create the following directory structure within the code
+repository, as required by the library (be sure to read <a class="reference internal" href="../layout.html#layout"><span class="std std-ref">Layout</span></a>
+section):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|--</span> <span class="o">.</span><span class="n">sqa</span>
+<span class="o">|</span>    <span class="o">|--</span> <span class="n">config</span><span class="o">.</span><span class="n">yml</span>
+<span class="o">|</span>    <span class="o">|--</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="o">.</span><span class="n">yml</span>
+<span class="o">|--</span> <span class="n">Jenkinsfile</span>
+</pre></div>
+</div>
+<p>3.1. Create the main <code class="docutils literal notranslate"><span class="pre">.sqa</span></code> folder:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir .sqa
 </pre></div>
 </div>
