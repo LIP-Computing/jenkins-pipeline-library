@@ -346,7 +346,8 @@ must always be prefixed by</strong> <code class="docutils literal notranslate"><
 <dt>Notes on links between <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> (TOX), <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> (CONFIG) and <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> (DC)</dt><dd><ol class="arabic simple">
 <li><p>The value for <code class="docutils literal notranslate"><span class="pre">tox_file</span></code> [CONFIG] must be the absolute path to the
 TOX file. <strong>To obtain the full path to the TOX file,</strong> <code class="docutils literal notranslate"><span class="pre">target</span></code>
-<strong>[DC file] must be prepended</strong>, as it is the folder where the
+<strong>[DC file] must be prepended to the relative path of the TOX file
+within the code repository</strong>, as it is the folder where the
 repository has been checked out. In the example above, <em>myrepo</em> has the
 TOX file available in the root path of the repository, therefore
 <em>/myrepo-testing/tox.ini</em> is the correct location.</p></li>
