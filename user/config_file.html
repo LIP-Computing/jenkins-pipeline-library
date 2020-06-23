@@ -262,7 +262,7 @@ agents.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
 </pre></div>
 </div>
 <div class="section" id="node-agent">
@@ -331,7 +331,7 @@ is used by default.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
 </pre></div>
 </div>
 <p>The set of allowed parameters for the definition of the code repository’s
@@ -567,8 +567,8 @@ former criteria:</p>
 <div class="section" id="container">
 <span id="config-container-setting"></span><h4>container<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h4>
 <p>Allows to specify the Docker container where the given criteria assessment will
-take place. It using docker-compose, the value could be any of the services
-defined in the docker-compose.yml.</p>
+take place. If docker-compose, the value could be any of the services defined
+in the docker-compose.yml.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
@@ -731,12 +731,13 @@ criteria checks.</p>
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
         <span class="fa fa-book"> Other Versions</span>
-        v: release/2.0.0-docs
+        v: release/2.0.0
         <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
         <dl>
             <dt>Branches</dt>
+            <dd><a href="../release_2.0.0/user/config_file.html">release/2.0.0</a></dd>
             <dd><a href="../release_2.0.0-docs/user/config_file.html">release/2.0.0-docs</a></dd>
         </dl>
     </div>
