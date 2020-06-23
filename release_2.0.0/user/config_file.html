@@ -460,6 +460,12 @@ the current version of the jenkins-pipeline-library. The settings described in
 this section are common to all, which are applicable and defined
 per-repository, and thus, they must be used within the <code class="docutils literal notranslate"><span class="pre">repos</span></code> map setting,
 as showed in the following examples.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The repositories used under <code class="docutils literal notranslate"><span class="pre">repos</span></code> must be previously defined in the
+<code class="docutils literal notranslate"><span class="pre">config:project_repos</span></code> setting. They are referred by the identifiers
+used there.</p>
+</div>
 <dl>
 <dt><em>Examples:</em></dt><dd><div class="sphinx-tabs docutils container">
 <div class="ui top attached tabular menu sphinx-menu docutils container">
@@ -619,6 +625,11 @@ environments.</p>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox:tox_file</span></code></p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If using <code class="docutils literal notranslate"><span class="pre">tox</span></code> without <code class="docutils literal notranslate"><span class="pre">container</span></code>, the jenkins-pipeline-library will
+automatically select an appropriate Docker container for running the tool.</p>
+</div>
 </div>
 <div class="section" id="commands">
 <h4>commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h4>
@@ -644,6 +655,15 @@ built-in support for the tool you use for building purposes.</p>
          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bundle exec brakeman --exit-on-error</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">commands</span></code> requires the presence of the <code class="docutils literal notranslate"><span class="pre">container</span></code> setting, which must
+have available all the tools –and dependencies– used by the list of
+commands. Also the commands runs relative to the root directory /. As a
+hacking solution is possible to use an environment variable to define the
+expected workspace in docker-compose.yml context, as a solution for current
+release.</p>
+</div>
 </div>
 </div>
 <div class="section" id="environment">
@@ -664,6 +684,13 @@ criteria checks.</p>
   <span class="nt">GIT_COMMITTER_EMAIL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">person1@example.org</span>
   <span class="nt">LANG</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">C.UTF-8</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">environment</span></code> variables are only usable by the deployment (for example
+with docker-compose) or defined features in current version. This environment
+will not be available inside the containers. For that, you should use for
+example, docker-compose.yml environment definitions instead.</p>
 </div>
 </div>
 <div class="section" id="timeout">
