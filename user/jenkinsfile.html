@@ -104,7 +104,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="step_by_step/intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="step_by_step/min_configuration.html">A minimal configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="step_by_step/sqa_criteria.html">The <code class="docutils literal notranslate"><span class="pre">sqa-criteria</span></code> setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="step_by_step/sqa_criteria.html">The <code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code> setting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="step_by_step/ending.html">Last steps</a></li>
 </ul>
 
@@ -202,7 +202,7 @@
 <div class="section" id="the-pipeline-explained">
 <h2>The pipeline explained<a class="headerlink" href="#the-pipeline-explained" title="Permalink to this headline">¶</a></h2>
 <p>The pipeline loads the jenkins-pipeline-library in the first place:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Library</span><span class="p">([</span><span class="s1">&#39;github.com:indigo-dc/jenkins-pipeline-library@2.0.0&#39;</span><span class="p">])</span> <span class="n">_</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@Library</span><span class="p">([</span><span class="s1">&#39;github.com/indigo-dc/jenkins-pipeline-library@2.0.0&#39;</span><span class="p">])</span> <span class="n">_</span>
 </pre></div>
 </div>
 <p>and only requires the definition of a <strong>single stage</strong> that will be in charge
@@ -278,14 +278,20 @@ the file using the <code class="docutils literal notranslate"><span class="pre">
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
         <span class="fa fa-book"> Other Versions</span>
-        v: release/2.0.0
+        v: stable/2.0.0
         <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
         <dl>
+            <dt>Tags</dt>
+            <dd><a href="../2.0.0/user/jenkinsfile.html">2.0.0</a></dd>
+        </dl>
+        <dl>
             <dt>Branches</dt>
+            <dd><a href="../how_to_build_docs/user/jenkinsfile.html">how_to_build_docs</a></dd>
             <dd><a href="../release_2.0.0/user/jenkinsfile.html">release/2.0.0</a></dd>
-            <dd><a href="../release_2.0.0-docs/user/jenkinsfile.html">release/2.0.0-docs</a></dd>
+            <dd><a href="../release_2.1.0/user/jenkinsfile.html">release/2.1.0</a></dd>
+            <dd><a href="../stable_2.0.0/user/jenkinsfile.html">stable/2.0.0</a></dd>
         </dl>
     </div>
 </div>

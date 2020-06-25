@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="The sqa-criteria setting" href="sqa_criteria.html" />
+    <link rel="next" title="The sqa_criteria setting" href="sqa_criteria.html" />
     <link rel="prev" title="Intro" href="intro.html" /> 
 </head>
 
@@ -101,7 +101,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">A minimal configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sqa_criteria.html">The <code class="docutils literal notranslate"><span class="pre">sqa-criteria</span></code> setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqa_criteria.html">The <code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code> setting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ending.html">Last steps</a></li>
 </ul>
 
@@ -218,7 +218,7 @@ section):</p>
 only specify the version required by the library (i.e. <code class="docutils literal notranslate"><span class="pre">3.6</span></code>), later on
 we will add the service definitions (see
 <a class="reference internal" href="../docker_compose.html#the-services-docker-compose-yml"><span class="std std-ref">The services: docker-compose.yml</span></a> section):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat <span class="s">&lt;&lt;EOF &gt; .sqa/config.yml</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat <span class="s">&lt;&lt;EOF &gt; .sqa/docker-compose.yml</span>
 <span class="s">version: &quot;3.6&quot;</span>
 <span class="s">EOF</span>
 </pre></div>
@@ -262,7 +262,7 @@ $ git commit -m <span class="s2">&quot;Initial setup of jenkins-pipeline-library
 </pre></div>
 </div>
 <p>Now that we have the skeleton with an initial version of the three relevant
-files, let’s add our checks through the <code class="docutils literal notranslate"><span class="pre">sqa-criteria</span></code> setting. We will see
+files, let’s add our checks through the <code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code> setting. We will see
 how to do that in the next section.</p>
 </div>
 
@@ -274,7 +274,7 @@ how to do that in the next section.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sqa_criteria.html" class="btn btn-neutral float-right" title="The sqa-criteria setting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sqa_criteria.html" class="btn btn-neutral float-right" title="The sqa_criteria setting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="intro.html" class="btn btn-neutral float-left" title="Intro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -317,9 +317,15 @@ how to do that in the next section.</p>
     </span>
     <div class="rst-other-versions">
         <dl>
+            <dt>Tags</dt>
+            <dd><a href="../../../2.0.0/user/step_by_step/min_configuration.html">2.0.0</a></dd>
+        </dl>
+        <dl>
             <dt>Branches</dt>
+            <dd><a href="../../../how_to_build_docs/user/step_by_step/min_configuration.html">how_to_build_docs</a></dd>
             <dd><a href="min_configuration.html">release/2.0.0</a></dd>
-            <dd><a href="../../../release_2.0.0-docs/user/step_by_step/min_configuration.html">release/2.0.0-docs</a></dd>
+            <dd><a href="../../../release_2.1.0/user/step_by_step/min_configuration.html">release/2.1.0</a></dd>
+            <dd><a href="../../../stable_2.0.0/user/step_by_step/min_configuration.html">stable/2.0.0</a></dd>
         </dl>
     </div>
 </div>

@@ -126,7 +126,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="step_by_step/intro.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="step_by_step/min_configuration.html">A minimal configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="step_by_step/sqa_criteria.html">The <code class="docutils literal notranslate"><span class="pre">sqa-criteria</span></code> setting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="step_by_step/sqa_criteria.html">The <code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code> setting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="step_by_step/ending.html">Last steps</a></li>
 </ul>
 
@@ -210,10 +210,10 @@ root directory of your code repository.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
 
-<span class="nt">sqa-criteria</span><span class="p">:</span>
-  <span class="nt">qc-style</span><span class="p">:</span>
+<span class="nt">sqa_criteria</span><span class="p">:</span>
+  <span class="nt">qc_style</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
@@ -274,10 +274,10 @@ is used by default.</p>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </dd>
 <dt class="field-even">Options</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">docker-compose</span></code></p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">docker_compose</span></code></p>
 </dd>
 <dt class="field-odd">Default</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">docker-compose</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">docker_compose</span></code></p>
 </dd>
 <dt class="field-even">Location</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">config:node_agent</span></code></p>
@@ -285,7 +285,7 @@ is used by default.</p>
 </dl>
 <p>Example:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">config</span><span class="p">:</span>
-  <span class="nt">node_agent</span><span class="p">:</span> <span class="s">&#39;docker-compose&#39;</span>
+  <span class="nt">node_agent</span><span class="p">:</span> <span class="s">&#39;docker_compose&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -401,15 +401,15 @@ optional attributes.</p>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">map</span></code></p>
 </dd>
 <dt class="field-even">Parameters</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">qc-style</span></code>, <code class="docutils literal notranslate"><span class="pre">qc-functional</span></code>, <code class="docutils literal notranslate"><span class="pre">qc-coverage</span></code>, <code class="docutils literal notranslate"><span class="pre">qc-security</span></code>, <code class="docutils literal notranslate"><span class="pre">qc-doc</span></code></p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">qc_style</span></code>, <code class="docutils literal notranslate"><span class="pre">qc_functional</span></code>, <code class="docutils literal notranslate"><span class="pre">qc_coverage</span></code>, <code class="docutils literal notranslate"><span class="pre">qc_security</span></code>, <code class="docutils literal notranslate"><span class="pre">qc_doc</span></code></p>
 </dd>
 <dt class="field-odd">Required</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa-criteria</span><span class="p">:</span>
-  <span class="nt">qc-style</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
+  <span class="nt">qc_style</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
@@ -438,19 +438,19 @@ is summarized as follows:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>qc-style</p></td>
+<tr class="row-even"><td><p>qc_style</p></td>
 <td><p>QC.Sty</p></td>
 </tr>
-<tr class="row-odd"><td><p>qc-coverage</p></td>
+<tr class="row-odd"><td><p>qc_coverage</p></td>
 <td><p>QC.Uni</p></td>
 </tr>
-<tr class="row-even"><td><p>qc-functional</p></td>
+<tr class="row-even"><td><p>qc_functional</p></td>
 <td><p>QC.Fun</p></td>
 </tr>
-<tr class="row-odd"><td><p>qc-security</p></td>
+<tr class="row-odd"><td><p>qc_security</p></td>
 <td><p>QC.Sec</p></td>
 </tr>
-<tr class="row-even"><td><p>qc-doc</p></td>
+<tr class="row-even"><td><p>qc_doc</p></td>
 <td><p>QC.Doc</p></td>
 </tr>
 </tbody>
@@ -471,33 +471,33 @@ used there.</p>
 <div class="ui top attached tabular menu sphinx-menu docutils container">
 <div class="active item sphinx-data-tab-0-0 docutils container">
 <div class="docutils container">
-<p>qc-style</p>
+<p>qc_style</p>
 </div>
 </div>
 <div class="item sphinx-data-tab-0-1 docutils container">
 <div class="docutils container">
-<p>qc-coverage</p>
+<p>qc_coverage</p>
 </div>
 </div>
 <div class="item sphinx-data-tab-0-2 docutils container">
 <div class="docutils container">
-<p>qc-functional</p>
+<p>qc_functional</p>
 </div>
 </div>
 <div class="item sphinx-data-tab-0-3 docutils container">
 <div class="docutils container">
-<p>qc-security</p>
+<p>qc_security</p>
 </div>
 </div>
 <div class="item sphinx-data-tab-0-4 docutils container">
 <div class="docutils container">
-<p>qc-doc</p>
+<p>qc_doc</p>
 </div>
 </div>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
-  <span class="nt">qc-style</span><span class="p">:</span>
+  <span class="nt">qc_style</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
@@ -509,7 +509,7 @@ used there.</p>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
-  <span class="nt">qc-coverage</span><span class="p">:</span>
+  <span class="nt">qc_coverage</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
@@ -526,7 +526,7 @@ used there.</p>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-2 docutils container">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
-  <span class="nt">qc-functional</span><span class="p">:</span>
+  <span class="nt">qc_functional</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
@@ -543,7 +543,7 @@ used there.</p>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-3 docutils container">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
-  <span class="nt">qc-security</span><span class="p">:</span>
+  <span class="nt">qc_security</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-processing</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
@@ -555,7 +555,7 @@ used there.</p>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-4 docutils container">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
-  <span class="nt">qc-doc</span><span class="p">:</span>
+  <span class="nt">qc_doc</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
       <span class="nt">worsica-cicd</span><span class="p">:</span>
         <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">processing</span>
@@ -573,14 +573,14 @@ former criteria:</p>
 <div class="section" id="container">
 <span id="config-container-setting"></span><h4>container<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h4>
 <p>Allows to specify the Docker container where the given criteria assessment will
-take place. If docker-compose, the value could be any of the services defined
-in the docker-compose.yml.</p>
+take place. If using <code class="docutils literal notranslate"><span class="pre">docker_compose</span></code>, the value could be any of the services
+defined in the docker-compose.yml.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </dd>
 <dt class="field-even">Location</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:container</span></code></p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc_xxx&gt;:repos:&lt;repo&gt;:container</span></code></p>
 </dd>
 </dl>
 </div>
@@ -596,7 +596,7 @@ environments.</p>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">testenv</span></code>, <code class="docutils literal notranslate"><span class="pre">tox_file</span></code></p>
 </dd>
 <dt class="field-odd">Location</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc_xxx&gt;:repos:&lt;repo&gt;:tox</span></code></p>
 </dd>
 </dl>
 <p><strong>testenv</strong></p>
@@ -609,7 +609,7 @@ environments.</p>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p>
 </dd>
 <dt class="field-odd">Location</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox:testenv</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc_xxx&gt;:repos:&lt;repo&gt;:tox:testenv</span></code></p>
 </dd>
 </dl>
 <p><strong>tox_file</strong></p>
@@ -622,7 +622,7 @@ environments.</p>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">tox.ini</span></code></p>
 </dd>
 <dt class="field-odd">Location</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:tox:tox_file</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc_xxx&gt;:repos:&lt;repo&gt;:tox:tox_file</span></code></p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -643,12 +643,12 @@ built-in support for the tool you use for building purposes.</p>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p>
 </dd>
 <dt class="field-odd">Location</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc-xxx&gt;:repos:&lt;repo&gt;:commands</span></code></p>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">sqa_criteria:&lt;qc_xxx&gt;:repos:&lt;repo&gt;:commands</span></code></p>
 </dd>
 </dl>
 <p>Example:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sqa_criteria</span><span class="p">:</span>
-  <span class="nt">qc-sec</span><span class="p">:</span>
+  <span class="nt">qc_sec</span><span class="p">:</span>
     <span class="nt">repos</span><span class="p">:</span>
      <span class="nt">worsica-processing</span><span class="p">:</span>
        <span class="nt">commands</span><span class="p">:</span>
@@ -660,9 +660,9 @@ built-in support for the tool you use for building purposes.</p>
 <p><code class="docutils literal notranslate"><span class="pre">commands</span></code> requires the presence of the <code class="docutils literal notranslate"><span class="pre">container</span></code> setting, which must
 have available all the tools –and dependencies– used by the list of
 commands. Also the commands runs relative to the root directory /. As a
-hacking solution is possible to use an environment variable to define the
-expected workspace in docker-compose.yml context, as a solution for current
-release.</p>
+hacking solution is possible to use Docker Compose’s
+<a class="reference internal" href="docker_compose.html#docker-compose-env"><span class="std std-ref">environment variables</span></a> to define the expected workspace in
+docker-compose.yml context, as a solution for current release.</p>
 </div>
 </div>
 </div>
@@ -688,7 +688,7 @@ criteria checks.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">environment</span></code> variables are only usable by the deployment (for example
-with docker-compose) or defined features in current version. This environment
+with docker_compose) or defined features in current version. This environment
 will not be available inside the containers. For that, you should use for
 example, docker-compose.yml environment definitions instead.</p>
 </div>
@@ -763,9 +763,15 @@ example, docker-compose.yml environment definitions instead.</p>
     </span>
     <div class="rst-other-versions">
         <dl>
+            <dt>Tags</dt>
+            <dd><a href="../../2.0.0/user/config_file.html">2.0.0</a></dd>
+        </dl>
+        <dl>
             <dt>Branches</dt>
+            <dd><a href="../../how_to_build_docs/user/config_file.html">how_to_build_docs</a></dd>
             <dd><a href="config_file.html">release/2.0.0</a></dd>
-            <dd><a href="../../release_2.0.0-docs/user/config_file.html">release/2.0.0-docs</a></dd>
+            <dd><a href="../../release_2.1.0/user/config_file.html">release/2.1.0</a></dd>
+            <dd><a href="../../stable_2.0.0/user/config_file.html">stable/2.0.0</a></dd>
         </dl>
     </div>
 </div>
