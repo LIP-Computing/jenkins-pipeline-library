@@ -336,11 +336,11 @@ service definition in the DC file. In the example above, the service
 <em>myrepo-testing</em> is defined under <em>services</em> inside DC file.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">source</span></code> parameter [DC file] corresponds to the ID/name used to
 identify the current repository, i.e. the ID used in the
-<code class="docutils literal notranslate"><span class="pre">config:project_repos</span></code> definition [CONFIG]. Due to some limitations
-found in the DC file specification, the <code class="docutils literal notranslate"><span class="pre">source</span></code> <strong>[DC file] value
-must always be prefixed by</strong> <code class="docutils literal notranslate"><span class="pre">./</span></code>. In our example, we have set
-<em>myrepo</em> as the ID so the correct value for <code class="docutils literal notranslate"><span class="pre">source</span></code> [DC file] is
-<em>./myrepo</em>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">config:project_repos</span></code> definition [CONFIG]. Since we are using a
+relative path in the DC file specification, the <code class="docutils literal notranslate"><span class="pre">source</span></code> <strong>[DC file] value
+must always be prefixed by</strong> <code class="docutils literal notranslate"><span class="pre">./</span></code> (DC always expect a path format).
+In our example, we have set <em>myrepo</em> as the ID so the correct value for
+<code class="docutils literal notranslate"><span class="pre">source</span></code> [DC file] is <em>./myrepo</em>.</p></li>
 </ol>
 </dd>
 <dt>Notes on links between <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> (TOX), <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> (CONFIG) and <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> (DC)</dt><dd><ol class="arabic simple">
@@ -445,7 +445,7 @@ the previous Python-with-tox example since <em>flake8</em> tool is executed.</p>
        <span class="nt">myrepo</span><span class="p">:</span>
          <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">myrepo-testing-java</span>
          <span class="nt">commands</span><span class="p">:</span>
-           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mvn checkstyle:checkstyle</span>
+           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mvn -f /myrepo-testing/pom.xml checkstyle:checkstyle</span>
 </pre></div>
 </div>
 </div>
@@ -535,7 +535,6 @@ executed in Jenkins.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../../../how_to_build_docs/user/step_by_step/sqa_criteria.html">how_to_build_docs</a></dd>
             <dd><a href="../../../release_2.0.0/user/step_by_step/sqa_criteria.html">release/2.0.0</a></dd>
             <dd><a href="../../../release_2.1.0/user/step_by_step/sqa_criteria.html">release/2.1.0</a></dd>
             <dd><a href="../../../stable_2.0.0/user/step_by_step/sqa_criteria.html">stable/2.0.0</a></dd>

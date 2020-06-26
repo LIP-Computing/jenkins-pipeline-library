@@ -210,7 +210,7 @@ root directory of your code repository.</p>
       <span class="nt">repo</span><span class="p">:</span> <span class="s">&#39;https://github.com/WORSICA/worsica-processing.git&#39;</span>
       <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
       <span class="nt">dockerhub</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">worsica/worsica-processing</span>
-      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$branch</span>
+      <span class="nt">dockertag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
 
 <span class="nt">sqa_criteria</span><span class="p">:</span>
   <span class="nt">qc_style</span><span class="p">:</span>
@@ -660,9 +660,9 @@ built-in support for the tool you use for building purposes.</p>
 <p><code class="docutils literal notranslate"><span class="pre">commands</span></code> requires the presence of the <code class="docutils literal notranslate"><span class="pre">container</span></code> setting, which must
 have available all the tools –and dependencies– used by the list of
 commands. Also the commands runs relative to the root directory /. As a
-hacking solution is possible to use an environment variable to define the
-expected workspace in docker-compose.yml context, as a solution for current
-release.</p>
+hacking solution is possible to use Docker Compose’s
+<a class="reference internal" href="docker_compose.html#docker-compose-env"><span class="std std-ref">environment variables</span></a> to define the expected workspace in
+docker-compose.yml context, as a solution for current release.</p>
 </div>
 </div>
 </div>
@@ -768,7 +768,6 @@ example, docker-compose.yml environment definitions instead.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../../how_to_build_docs/user/config_file.html">how_to_build_docs</a></dd>
             <dd><a href="../../release_2.0.0/user/config_file.html">release/2.0.0</a></dd>
             <dd><a href="../../release_2.1.0/user/config_file.html">release/2.1.0</a></dd>
             <dd><a href="../../stable_2.0.0/user/config_file.html">stable/2.0.0</a></dd>
