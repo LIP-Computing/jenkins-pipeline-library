@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>The services: docker-compose.yml &mdash; jenkins-pipeline-library 2.0.0 documentation</title>
+  <title>The services: docker-compose.yml &mdash; jenkins-pipeline-library 2.1.0 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.1.0
               </div>
             
           
@@ -94,7 +94,10 @@
 <p class="caption"><span class="caption-text">Configuration files</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="config_file.html">The configuration file: config.yml</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">The services: docker-compose.yml</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The services: docker-compose.yml</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variables">environment variables</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="jenkinsfile.html">The pipeline: Jenkinsfile</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Step-by-step guide</span></p>
@@ -206,6 +209,30 @@ the <code class="docutils literal notranslate"><span class="pre">sqa_criteria</s
 <p>The identifier used in the service definition –<code class="docutils literal notranslate"><span class="pre">processing</span></code> in the
 example above– will be then used in the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> as part of the
 <a class="reference internal" href="config_file.html#config-container-setting"><span class="std std-ref">container</span></a> setting.</p>
+</div>
+<div class="section" id="environment-variables">
+<span id="docker-compose-env"></span><h2>environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>Environment variables can be set using the <a class="reference external" href="https://docs.docker.com/compose/environment-variables/">environment</a> label. It is
+possible to bypass variables defined from config.yml environment and set them
+afterwards inside docker-compose. For example, based on previous examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>version: &quot;3.6&quot;
+
+services:
+  processing:
+    image: &quot;worsica/worsica-backend:worsica-processing-dev_latest&quot;
+    container_name: &quot;processing&quot;
+    hostname: &quot;processing&quot;
+    volumes:
+     - type: bind
+       source: worsica_web_products
+       target: /usr/local/worsica_web_products
+    environment:
+     - DEBUG=1
+     - GIT_COMMITTER_NAME=${GIT_COMMITTER_NAME}
+     - GIT_COMMITTER_EMAIL=${GIT_COMMITTER_EMAIL}
+     - LANG: ${LANG}
+</pre></div>
+</div>
 </div>
 </div>
 

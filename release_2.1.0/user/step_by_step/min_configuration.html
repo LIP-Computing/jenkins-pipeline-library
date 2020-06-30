@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>A minimal configuration &mdash; jenkins-pipeline-library 2.0.0 documentation</title>
+  <title>A minimal configuration &mdash; jenkins-pipeline-library 2.1.0 documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.1.0
               </div>
             
           
@@ -218,7 +218,7 @@ section):</p>
 only specify the version required by the library (i.e. <code class="docutils literal notranslate"><span class="pre">3.6</span></code>), later on
 we will add the service definitions (see
 <a class="reference internal" href="../docker_compose.html#the-services-docker-compose-yml"><span class="std std-ref">The services: docker-compose.yml</span></a> section):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat <span class="s">&lt;&lt;EOF &gt; .sqa/config.yml</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat <span class="s">&lt;&lt;EOF &gt; .sqa/docker-compose.yml</span>
 <span class="s">version: &quot;3.6&quot;</span>
 <span class="s">EOF</span>
 </pre></div>
@@ -228,7 +228,7 @@ file required by Jenkins. In order to make it work with the
 jenkins-pipeline-library, at least the following content must be present
 (see <a class="reference internal" href="../jenkinsfile.html#the-pipeline-jenkinsfile"><span class="std std-ref">The pipeline: Jenkinsfile</span></a> section):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat <span class="s">&lt;&lt;EOF &gt; Jenkinsfile</span>
-<span class="s">@Library([&#39;github.com:indigo-dc/jenkins-pipeline-library@2.0.0&#39;]) _</span>
+<span class="s">@Library([&#39;github.com/indigo-dc/jenkins-pipeline-library@2.1.0&#39;]) _</span>
 
 <span class="s">def projectConfig</span>
 
