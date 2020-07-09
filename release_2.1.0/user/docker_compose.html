@@ -107,6 +107,10 @@
 <li class="toctree-l1"><a class="reference internal" href="step_by_step/sqa_criteria.html">The <code class="docutils literal notranslate"><span class="pre">sqa_criteria</span></code> setting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="step_by_step/ending.html">Last steps</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Contribution guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contrib/documentation.html">Contributing with docs</a></li>
+</ul>
 
             
           
@@ -196,7 +200,7 @@ Compose specification:</p>
     <span class="n">hostname</span><span class="p">:</span> <span class="s2">&quot;processing&quot;</span>
     <span class="n">volumes</span><span class="p">:</span>
      <span class="o">-</span> <span class="nb">type</span><span class="p">:</span> <span class="n">bind</span>
-       <span class="n">source</span><span class="p">:</span> <span class="n">worsica_web_products</span>
+       <span class="n">source</span><span class="p">:</span> <span class="o">./</span><span class="n">worsica_web_products</span>
        <span class="n">target</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">worsica_web_products</span>
 </pre></div>
 </div>
@@ -224,7 +228,7 @@ services:
     hostname: &quot;processing&quot;
     volumes:
      - type: bind
-       source: worsica_web_products
+       source: ./worsica_web_products
        target: /usr/local/worsica_web_products
     environment:
      - DEBUG=1
